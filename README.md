@@ -17,7 +17,7 @@ Escape) to fold the fan back into the icon.
 - Thumbnails for images, PDFs, videos and whatever else your thumbnailers
   cover, using the same preview plugins as Dolphin.
 - Curves to the right, or to the left when the arc would not fit on screen.
-- Configurable lean angle, number of entries, icon size, animation length,
+- Configurable curve radius, number of entries, icon size, animation length,
   folder, panel icon, sort order, hidden files.
 - Middle-click the panel icon to open the folder. Drop files on it to move
   them into the folder.
@@ -54,7 +54,7 @@ and choose *Configure…* to change the folder, icon and the rest.
 | Icon | `folder-download` | Icon shown on the panel |
 | Files shown in the fan | 8 | Entries before the "N more…" item |
 | Fan icon size | 48 px | Icon size inside the fan |
-| Fan lean at the top | 38° | How far the top entry tilts from vertical; the arc starts vertical at the icon |
+| Curve radius | 13 × icon spacing | Radius of the arc; the curve is the same however many entries there are. Smaller curls over more |
 | Fan curves | Away from the screen edge | Force right or left if you prefer |
 | Animation length | 350 ms | Scaled by the global animation speed |
 | Sort by / Descending / Folders first | Date, descending | Same options as Folder View |
@@ -85,9 +85,10 @@ Layout:
 - `contents/ui/FanItem.qml` – one entry: icon, label, open/close animation
 - `contents/ui/configGeneral.qml`, `contents/config/main.xml` – settings
 
-The arc is a circle that leaves the panel icon vertically. Its radius grows
-with the number of entries so that the top entry tilts exactly as far as the
-configured lean, capped at 60° to keep each label clear of the icon above.
+The arc is a circle of fixed radius that leaves the panel icon vertically,
+so a short fan is just the bottom of the same curve. Only if a very large fan
+would tilt its top entry past 60° does the radius grow, to keep each label
+clear of the icon above.
 
 ## License
 

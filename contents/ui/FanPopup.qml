@@ -39,11 +39,14 @@ PlasmaCore.Dialog {
     readonly property int gap: Math.round(iconSize * 0.35)
     readonly property int step: iconSize + gap
     readonly property bool newestAtTop: Plasmoid.configuration.newestAtTop
-    // The arc leaves the dock icon vertically and tilts over until its top
-    // entry leans this far from vertical (radians). Above ~60° a label, which
-    // sits beside its icon towards the inside of the curve, would run into
-    // the icon above it even with the small downward label offset below.
-    readonly property real maxTangent: Math.max(10, Math.min(60, Plasmoid.configuration.fanLean)) * Math.PI / 180
+    // The arc leaves the dock icon vertically and curls over with a fixed
+    // radius, like the Dock's fan: a short fan is simply the bottom of the
+    // same curve. Above ~60° of tilt a label, which sits beside its icon
+    // towards the inside of the curve, would run into the icon above it even
+    // with the small downward label offset, so the radius only grows beyond
+    // the configured one when a very large fan would pass that.
+    readonly property real fixedRadius: step * Math.max(4, Math.min(60, Plasmoid.configuration.fanRadius))
+    readonly property real maxTangent: 60 * Math.PI / 180
     readonly property int labelDrop: Math.round(iconSize / 6)
     readonly property int labelGap: Math.round(iconSize * 0.25)
     readonly property int labelMaxWidth: iconSize * 5
@@ -52,8 +55,7 @@ PlasmaCore.Dialog {
     readonly property real firstDistance: dockHalf + iconSize * 0.75
     readonly property int itemCount: fanRepeater.count + 1
     readonly property real arcLength: firstDistance + (itemCount - 1) * step
-    // Radius grows with the number of entries so the arc always ends at maxTangent.
-    readonly property real arcRadius: Math.max(step * 8, arcLength / maxTangent)
+    readonly property real arcRadius: Math.max(fixedRadius, arcLength / maxTangent)
     readonly property real maxAngle: angleFor(itemCount - 1)
     readonly property real arcWidth: arcRadius * (1 - Math.cos(maxAngle))
     readonly property real arcHeight: arcRadius * Math.sin(maxAngle)

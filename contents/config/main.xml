@@ -26,9 +26,9 @@
       <label>Put the first file of the sort order (newest, by default) at the top of the fan and the "more" entry at the bottom.</label>
       <default>true</default>
     </entry>
-    <entry name="fanLean" type="Int">
-      <label>How far the top of the fan leans sideways, in degrees from vertical. The fan always starts vertical at the panel icon.</label>
-      <default>38</default>
+    <entry name="fanRadius" type="Int">
+      <label>Radius of the fan's curve, in multiples of the spacing between entries. The curve is the same whatever the number of entries; smaller values curl over more.</label>
+      <default>13</default>
     </entry>
     <entry name="direction" type="Int">
       <label>Which way the fan curves: 0 = automatic, 1 = right, 2 = left.</label>

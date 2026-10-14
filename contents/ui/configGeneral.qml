@@ -16,7 +16,7 @@ KCM.SimpleKCM {
     property alias cfg_fanIconSize: iconSizeSpin.value
     property int cfg_direction
     property alias cfg_newestAtTop: newestAtTopCheck.checked
-    property alias cfg_fanLean: leanSpin.value
+    property alias cfg_fanRadius: radiusSpin.value
     property alias cfg_previews: previewsCheck.checked
     property alias cfg_showHiddenFiles: hiddenCheck.checked
     property int cfg_sortMode
@@ -70,11 +70,11 @@ KCM.SimpleKCM {
         }
 
         QQC2.SpinBox {
-            id: leanSpin
-            Kirigami.FormData.label: i18n("Fan lean at the top:")
-            from: 10
+            id: radiusSpin
+            Kirigami.FormData.label: i18n("Curve radius:")
+            from: 4
             to: 60
-            textFromValue: (value, locale) => i18n("%1°", value)
+            textFromValue: (value, locale) => i18n("%1 × icon spacing", value)
             valueFromText: (text, locale) => parseInt(text)
         }
 
