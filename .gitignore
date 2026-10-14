@@ -1,0 +1,5 @@
+# Eclipse / IDE state
+.settings/
+.metadata/
+*.swp
+*~

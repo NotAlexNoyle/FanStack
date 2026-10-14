@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="url" type="String">
+      <label>Folder to show. Empty means the Downloads folder.</label>
+      <default></default>
+    </entry>
+    <entry name="icon" type="String">
+      <label>Icon shown on the panel.</label>
+      <default>folder-download</default>
+    </entry>
+    <entry name="fanLimit" type="Int">
+      <label>How many files the fan shows before falling back to "N more".</label>
+      <default>8</default>
+    </entry>
+    <entry name="fanIconSize" type="Int">
+      <label>Icon size in the fan, in pixels.</label>
+      <default>48</default>
+    </entry>
+    <entry name="newestAtTop" type="Bool">
+      <label>Put the first file of the sort order (newest, by default) at the top of the fan and the "more" entry at the bottom.</label>
+      <default>true</default>
+    </entry>
+    <entry name="fanLean" type="Int">
+      <label>How far the top of the fan leans sideways, in degrees from vertical. The fan always starts vertical at the panel icon.</label>
+      <default>38</default>
+    </entry>
+    <entry name="direction" type="Int">
+      <label>Which way the fan curves: 0 = automatic, 1 = right, 2 = left.</label>
+      <default>0</default>
+    </entry>
+    <entry name="previews" type="Bool">
+      <label>Show thumbnails instead of file type icons where available.</label>
+      <default>true</default>
+    </entry>
+    <entry name="showHiddenFiles" type="Bool">
+      <label>Include hidden files.</label>
+      <default>false</default>
+    </entry>
+    <entry name="sortMode" type="Int">
+      <label>Sort column: 0 = name, 1 = size, 2 = date, 6 = type.</label>
+      <default>2</default>
+    </entry>
+    <entry name="sortDesc" type="Bool">
+      <label>Sort descending (newest / largest first).</label>
+      <default>true</default>
+    </entry>
+    <entry name="sortDirsFirst" type="Bool">
+      <label>List folders before files.</label>
+      <default>false</default>
+    </entry>
+    <entry name="animationDuration" type="Int">
+      <label>Fan animation length in milliseconds, before the global animation speed is applied.</label>
+      <default>350</default>
+    </entry>
+  </group>
+
+</kcfg>

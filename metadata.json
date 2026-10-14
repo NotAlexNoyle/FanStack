@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "NotAlexNoyle"
+            }
+        ],
+        "Category": "File Management",
+        "Description": "A folder on the panel that fans its newest files out in an arc, like a macOS Dock stack",
+        "Icon": "folder-download",
+        "Id": "com.notalexnoyle.fanstack",
+        "License": "GPL-2.0-or-later",
+        "Name": "Fan Stack",
+        "Version": "1.0"
+    },
+    "Keyword": "folder stack fan dock downloads macos",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
